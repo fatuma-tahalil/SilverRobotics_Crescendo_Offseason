@@ -4,20 +4,22 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.RobotContainer;
-import frc.robot.Constants.driverConstants;
+import frc.robot.Constants;
 import frc.robot.subsystems.DrivetrainSubsystem;
 
 public class DriveCommand extends Command {
   /** Creates a new DriveCommand. */
-  DrivetrainSubsystem drivetrain;
-
+  private final Joystick joystick;
+  private final DrivetrainSubsystem m_drivetrainSubsystem;
+  
   // The commands constructor
-  public DriveCommand(DrivetrainSubsystem drivetrainsubsystem) {
-    // Use addRequirements() here to declare subsystem dependencies.
+  public DriveCommand(DrivetrainSubsystem drivetrainSubsystem, Joystick controller) {
+    joystick = controller;
+    m_drivetrainSubsystem = drivetrainSubsystem;
+    addRequirements(drivetrainSubsystem);
   }
-
 
 // Called when the command is initially scheduled.
   @Override
@@ -26,13 +28,16 @@ public class DriveCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    drivetrain.DriveCommand(RobotContainer.driverController, driverConstants.driveSpeed);
+    double moveSpeed = joystick.getRawAxis(Constants.driverConstants.axisX);
+    double rotateSpeed = joystick.getRawAxis(Constants.driverConstants.axisY);
+
+    m_drivetrainSubsystem.DriveCommand(moveSpeed, rotateSpeed);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    //drivetrain.stop();
+   m_drivetrainSubsystem.stop();
   }
   // Returns true when the command should end.
   @Override

@@ -15,39 +15,39 @@ package frc.robot;
  */
 public final class Constants {
   public static class OperatorConstants {
-  
-    public static final int controllerPort = 1;
+    public static int shooterPort = 0;
+    public static int controllerPort = 1;
     
   }
   public static class autoConstants{
     // Input auto constants
   }
   public static class driverConstants{
-    public static final int rightUpDeviceID = 1; 
-    public static final int leftUpDeviceID = 3;
-    public static final int rightDownDeviceID = 2; 
-    public static final int leftDownDeviceID = 4;
+    public static int rightUpDeviceID = 1; 
+    public static int leftUpDeviceID = 3;
+    public static int rightDownDeviceID = 2; 
+    public static int leftDownDeviceID = 4;
 
-    public static final int controllerPort = 1;
-    public static final double driveSpeed = 1.00;
-    public static final int axisX = 0;
-    public static final int axisY = 1;
-    public static final double rate_limit = 0.5;
-    public static double stop = 0;
+    public static int controllerPort = 1;
+    public static double driveSpeed = 1.00;
+    public static int axisX = 2;
+    public static int axisY = 1;
+    public static double rate_limit = 0.5;
 
   }
   public static class intakeConstants{
-    public static final int intakeID = 8;
+    public static int intakeID = 8;
   }
   public static class climberConstants{
     // Input climber constants
 
   }
   public static class shooterConstants{
-    public static final int shooterUpDeviceID = 5; 
-    public static final int shooterDownDeviceID = 6;
-    public static final double waitTime = 1;
-    public static final double stop = 0;
+    public static int shooterPort = 0;
+    public static int shooterUpDeviceID = 5; 
+    public static int shooterDownDeviceID = 6;
+    public static double waitTime = 1;
+    public static int shootButton = 6;
 
     public static double shooterSpeed = 1.00;
   }
