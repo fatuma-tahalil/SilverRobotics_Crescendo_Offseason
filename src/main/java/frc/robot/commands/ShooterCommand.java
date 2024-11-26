@@ -4,18 +4,44 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.RobotContainer;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.shooterConstants;
 import frc.robot.subsystems.ShooterSubsystem;
 
-public class ShooterCommand extends SubsystemBase {
-  /** Creates a new ShooterCommand. */
-  public ShooterCommand() {}
+public class ShooterCommand extends Command {
+  /**Creates a new ShooterCommand */
 
+  private final Joystick joystick;
+  private final ShooterSubsystem m_shooterSubsystem;
+
+  // The commands constructor
+  public ShooterCommand(ShooterSubsystem shooterSubsystem, Joystick controller) {
+    joystick = controller;
+    m_shooterSubsystem = shooterSubsystem;
+    addRequirements(shooterSubsystem);
+  }
+
+  //Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
+  public void execute() {
+    boolean prepare = joystick.getRawButtonPressed(shooterConstants.shootButton);
+    boolean release = joystick.getRawButtonReleased(shooterConstants.shootButton);
+    if (prepare) {
+      m_shooterSubsystem.waitSeconds();
+    } else if (release) {
+      m_shooterSubsystem.shoot();
+    }
+  }
+
+  //Called once the command ends or is interrupted.
+  @Override
+  public void end(boolean interrupted) {
+   m_shooterSubsystem.stop();
+  }
+  // Returns true when the command should end.
+  @Override
+  public boolean isFinished() {
+    return false;
   }
 }

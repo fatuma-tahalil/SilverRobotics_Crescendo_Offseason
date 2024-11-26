@@ -22,7 +22,7 @@ public class DrivetrainSubsystem extends SubsystemBase{
   private DifferentialDrive differentialDrive = null; 
 
   public DrivetrainSubsystem() {
-    rightUpMotor = new CANSparkMax(Constants.driverConstants.rightUpDeviceID, MotorType.kBrushed);//kBrushless
+    rightUpMotor = new CANSparkMax(Constants.driverConstants.rightUpDeviceID, MotorType.kBrushed);
     rightDownMotor = new CANSparkMax(Constants.driverConstants.rightDownDeviceID, MotorType.kBrushed);
     leftUpMotor = new CANSparkMax(Constants.driverConstants.leftUpDeviceID, MotorType.kBrushed);
     leftDownMotor = new CANSparkMax(Constants.driverConstants.leftDownDeviceID, MotorType.kBrushed);
@@ -36,18 +36,18 @@ public class DrivetrainSubsystem extends SubsystemBase{
     leftUpMotor.restoreFactoryDefaults();
     rightDownMotor.restoreFactoryDefaults();
     leftDownMotor.restoreFactoryDefaults();
-  };
+  }
 
   public void DriveCommand(double moveSpeed, double rotateSpeed) {
     differentialDrive.arcadeDrive(moveSpeed, rotateSpeed);
   }
-
+ @Override
   public void periodic() {
     // This method will be called once per scheduler run
 
     }
 
   public void stop() {
-    differentialDrive.arcadeDrive(Constants.driverConstants.stop,Constants.driverConstants.stop);
+    differentialDrive.arcadeDrive(0,0);
   }
 }

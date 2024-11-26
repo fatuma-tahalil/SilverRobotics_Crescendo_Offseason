@@ -1,26 +1,24 @@
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
-
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Joystick;
-
-import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
-// I don't really understand why it needs to be static and include the ".*"
-import static frc.robot.Constants.shooterConstants.*;
+import com.revrobotics.CANSparkMax;
 
-
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.shooterConstants;
 
 public class ShooterSubsystem extends SubsystemBase {
-  private final static CANSparkMax shooterUpMotor = new CANSparkMax(shooterUpDeviceID, MotorType.kBrushed);
-  private final static CANSparkMax shooterDownMotor = new CANSparkMax(shooterDownDeviceID, MotorType.kBrushed);
-  /** Creates a new ShooterSubsystem. */
+  private final CANSparkMax shooterUpMotor;
+  private final CANSparkMax shooterDownMotor;
+
   public ShooterSubsystem() {
-    
+    shooterUpMotor = new CANSparkMax(shooterConstants.shooterUpDeviceID, MotorType.kBrushed);
+    shooterDownMotor = new CANSparkMax(shooterConstants.shooterDownDeviceID, MotorType.kBrushed);
+
+    shooterUpMotor.restoreFactoryDefaults();
+    shooterDownMotor.restoreFactoryDefaults();
   }
 
   @Override
@@ -28,19 +26,17 @@ public class ShooterSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
 
   }
-
-  public static Command waitSeconds(double prepareShootingTime){
-    shooterUpMotor.set(shooterSpeed);
-    return(null);
+  // Hold button to run top motor
+  public void waitSeconds(){
+    shooterUpMotor.set(shooterConstants.shooterSpeed);
   }
-
-  public static void shoot(){
-    waitSeconds(waitTime);
-    shooterDownMotor.set(shooterSpeed);
+  // Release button to run bottom motor and send note
+  public void shoot(){
+    shooterDownMotor.set(shooterConstants.shooterSpeed);
   }
 
   public void stop() {
-    shooterUpMotor.set(stop);
-    shooterDownMotor.set(stop);
+    shooterUpMotor.set(0);
+    shooterDownMotor.set(0);
   }
 }

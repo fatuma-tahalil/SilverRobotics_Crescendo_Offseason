@@ -179,6 +179,3 @@ ctre_sim/
 
 # All files that are .json
 .json
-
-# Specific files
-simgui.json

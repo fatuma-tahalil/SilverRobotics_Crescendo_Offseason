@@ -11,11 +11,12 @@ import frc.robot.subsystems.DrivetrainSubsystem;
 
 public class DriveCommand extends Command {
   /** Creates a new DriveCommand. */
-  private final Joystick m_joystick;
+  private final Joystick joystick;
   private final DrivetrainSubsystem m_drivetrainSubsystem;
+  
   // The commands constructor
   public DriveCommand(DrivetrainSubsystem drivetrainSubsystem, Joystick controller) {
-    m_joystick = controller;
+    joystick = controller;
     m_drivetrainSubsystem = drivetrainSubsystem;
     addRequirements(drivetrainSubsystem);
   }
@@ -27,8 +28,8 @@ public class DriveCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double moveSpeed = m_joystick.getRawAxis(Constants.driverConstants.axisX);
-    double rotateSpeed = m_joystick.getRawAxis(Constants.driverConstants.axisY);
+    double moveSpeed = joystick.getRawAxis(Constants.driverConstants.axisX);
+    double rotateSpeed = joystick.getRawAxis(Constants.driverConstants.axisY);
 
     m_drivetrainSubsystem.DriveCommand(moveSpeed, rotateSpeed);
   }
