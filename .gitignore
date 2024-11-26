@@ -181,4 +181,4 @@ ctre_sim/
 .json
 
 # Specific files
-/gradlew
+simgui.json
