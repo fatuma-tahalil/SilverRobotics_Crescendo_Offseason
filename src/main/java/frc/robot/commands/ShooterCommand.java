@@ -25,11 +25,9 @@ public class ShooterCommand extends Command {
   //Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    boolean prepare = joystick.getRawButtonPressed(shooterConstants.shootButton);
-    boolean release = joystick.getRawButtonReleased(shooterConstants.shootButton);
-    if (prepare) {
+    if (joystick.getRawButtonPressed(shooterConstants.shootButton)) {
       m_shooterSubsystem.waitSeconds();
-    } else if (release) {
+    }if (joystick.getRawButtonReleased(shooterConstants.shootButton)) {
       m_shooterSubsystem.shoot();
     }
   }
