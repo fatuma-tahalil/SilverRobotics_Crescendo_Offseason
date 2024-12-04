@@ -17,8 +17,11 @@ public class ShooterSubsystem extends SubsystemBase {
     shooterUpMotor = new CANSparkMax(shooterConstants.shooterUpDeviceID, MotorType.kBrushed);
     shooterDownMotor = new CANSparkMax(shooterConstants.shooterDownDeviceID, MotorType.kBrushed);
 
+
     shooterUpMotor.restoreFactoryDefaults();
     shooterDownMotor.restoreFactoryDefaults();
+
+    //shooterDownMotor.setInverted(false);
   }
 
   @Override
@@ -28,11 +31,11 @@ public class ShooterSubsystem extends SubsystemBase {
   }
   // Hold button to run top motor
   public void waitSeconds(){
-    shooterUpMotor.set(shooterConstants.shooterSpeed);
+    shooterUpMotor.set(-shooterConstants.shooterSpeed);
   }
   // Release button to run bottom motor and send note
   public void shoot(){
-    shooterDownMotor.set(shooterConstants.shooterSpeed);
+    shooterDownMotor.set(-shooterConstants.shooterSpeed);
   }
 
   public void stop() {

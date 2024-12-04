@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import frc.robot.commands.DriveCommand;
+import frc.robot.commands.ShooterCommand;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
 
@@ -24,7 +25,7 @@ public class RobotContainer {
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
 
   public Joystick driverController = new Joystick(Constants.OperatorConstants.controllerPort);
-
+  public Joystick shooterController = new Joystick(Constants.OperatorConstants.controllerPort);
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -34,6 +35,7 @@ public class RobotContainer {
 
     // Set default commands on subsystems
    m_drivetrain.setDefaultCommand(new DriveCommand(m_drivetrain, driverController));
+   m_ShooterSubsystem.setDefaultCommand(new ShooterCommand(m_ShooterSubsystem, driverController));
   }
 
   /**
