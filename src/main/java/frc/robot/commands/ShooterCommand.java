@@ -11,7 +11,6 @@ import frc.robot.subsystems.ShooterSubsystem;
 
 public class ShooterCommand extends Command {
   /**Creates a new ShooterCommand */
-  //public Timer timer = new Timer();
   private final Joystick joystick;
   private final ShooterSubsystem m_shooterSubsystem;
 
@@ -25,15 +24,13 @@ public class ShooterCommand extends Command {
   //Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    //timer.start();
+    // If the button is pressed the shooter will prepare by speeding up the top motor
     if (joystick.getRawButtonPressed(shooterConstants.shootButton)) {
       m_shooterSubsystem.waitSeconds();
+    // If the button is released the shooter will shoot the note
     }if (joystick.getRawButtonReleased(shooterConstants.shootButton)) {
       m_shooterSubsystem.shoot();
     }
-    /*if (timer.get() > 5){
-      end(true);
-    }*/
     }
 
   //Called once the command ends or is interrupted.

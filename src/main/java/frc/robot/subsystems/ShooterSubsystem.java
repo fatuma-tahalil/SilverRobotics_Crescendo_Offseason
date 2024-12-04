@@ -20,8 +20,6 @@ public class ShooterSubsystem extends SubsystemBase {
 
     shooterUpMotor.restoreFactoryDefaults();
     shooterDownMotor.restoreFactoryDefaults();
-
-    //shooterDownMotor.setInverted(false);
   }
 
   @Override
