@@ -47,7 +47,8 @@ public final class Constants {
     public static int shooterUpDeviceID = 5; 
     public static int shooterDownDeviceID = 6;
     public static double waitTime = 1;
-    public static int shootButton = 1;
+    public static int shootButton1 = 5;
+    public static int shootButton2 = 6;
 
     public static double shooterSpeed = 1.00;
   }

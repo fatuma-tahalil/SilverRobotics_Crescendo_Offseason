@@ -25,7 +25,6 @@ public class RobotContainer {
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
 
   public Joystick driverController = new Joystick(Constants.OperatorConstants.controllerPort);
-  public Joystick shooterController = new Joystick(Constants.OperatorConstants.controllerPort);
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
