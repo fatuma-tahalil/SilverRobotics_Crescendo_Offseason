@@ -1,4 +1,6 @@
+# FRC 9575
+This is the FRC Crescendo offseason code for team 9575. <br> Our team wanted to switch from timed based to command base during the offseason, so here it is!
 
-Team 9575's Offseason 2024 Code for Crecendo Season
+
 
 
