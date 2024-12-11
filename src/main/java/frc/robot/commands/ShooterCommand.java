@@ -24,14 +24,18 @@ public class ShooterCommand extends Command {
   //Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    // If the button is pressed the shooter will prepare by speeding up the top motor
-    if (joystick.getRawButtonPressed(shooterConstants.shootButton)) {
+    // If the 5th button is pressed the shooter will prepare by speeding up the top motor
+    if (joystick.getRawButtonPressed(shooterConstants.shootButton1)) {
       m_shooterSubsystem.waitSeconds();
-    // If the button is released the shooter will shoot the note
-    }if (joystick.getRawButtonReleased(shooterConstants.shootButton)) {
+    // If the 6th button is being pressed and the 6th botton is clicked then the shooter will shoot
+    }if (joystick.getRawButton(shooterConstants.shootButton1) && joystick.getRawButtonPressed(shooterConstants.shootButton2)) {
       m_shooterSubsystem.shoot();
+    }  
+    if (joystick.getRawButtonReleased(shooterConstants.shootButton1) && joystick.getRawButtonReleased(shooterConstants.shootButton2)) {
+      m_shooterSubsystem.stop();
     }
-    }
+    
+  }
 
   //Called once the command ends or is interrupted.
   @Override

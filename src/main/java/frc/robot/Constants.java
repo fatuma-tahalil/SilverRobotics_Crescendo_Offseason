@@ -15,7 +15,7 @@ package frc.robot;
  */
 public final class Constants {
   public static class OperatorConstants {
-    public static int controllerPort = 1;  
+    public static int controllerPort = 0;  
   }
   
   public static class autoConstants{
@@ -35,7 +35,9 @@ public final class Constants {
   }
 
   public static class intakeConstants{
-    public static int intakeID = 8;
+    public static int intakeDeviceID = 8; 
+    public static double intakeSpeed = 0.15; //WHATEVER YOU DO, DO NOT SET THIS TO 1!!!
+    public static int intakeButton = 2; // PLACEHOLDER VALUE
   }
 
   public static class climberConstants{
@@ -47,7 +49,8 @@ public final class Constants {
     public static int shooterUpDeviceID = 5; 
     public static int shooterDownDeviceID = 6;
     public static double waitTime = 1;
-    public static int shootButton = 1;
+    public static int shootButton1 = 5;
+    public static int shootButton2 = 6;
 
     public static double shooterSpeed = 1.00;
   }
