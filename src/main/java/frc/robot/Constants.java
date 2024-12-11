@@ -45,6 +45,7 @@ public final class Constants {
     public static int rightClimberDeviceID = 9;
     public static int leftClimberDeviceID = 10;
     public static int climberButton = 3;
+    public static double climberSpeed = 1.00; // To be determined
   }
 
   public static class shooterConstants{

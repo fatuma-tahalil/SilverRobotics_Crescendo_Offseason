@@ -8,9 +8,11 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import frc.robot.commands.ClimberCommand;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.IntakeCommand;
 import frc.robot.commands.ShooterCommand;
+import frc.robot.subsystems.ClimberSubsystem;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
@@ -23,9 +25,10 @@ import frc.robot.subsystems.ShooterSubsystem;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  public static final DrivetrainSubsystem m_drivetrain = new DrivetrainSubsystem();
+  private final DrivetrainSubsystem m_drivetrain = new DrivetrainSubsystem();
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
   private final IntakeSubsystem m_IntakeSubsystem = new IntakeSubsystem();
+  private final ClimberSubsystem m_ClimberSubsystem = new ClimberSubsystem();
   public Joystick driverController = new Joystick(Constants.OperatorConstants.controllerPort);
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -38,6 +41,7 @@ public class RobotContainer {
    m_drivetrain.setDefaultCommand(new DriveCommand(m_drivetrain, driverController));
    m_ShooterSubsystem.setDefaultCommand(new ShooterCommand(m_ShooterSubsystem, driverController));
    m_IntakeSubsystem.setDefaultCommand(new IntakeCommand(m_IntakeSubsystem, driverController));
+   m_ClimberSubsystem.setDefaultCommand(new ClimberCommand(m_ClimberSubsystem, driverController));
   }
 
 

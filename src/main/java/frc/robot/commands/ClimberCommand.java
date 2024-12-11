@@ -4,12 +4,20 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.ClimberSubsystem;
+import frc.robot.Constants.climberConstants;
 
 public class ClimberCommand extends Command {
+
+  private final Joystick joystick;
+  private final ClimberSubsystem m_climberSubsystem;
   /** Creates a new ClimberCommand. */
-  public ClimberCommand() {
+  public ClimberCommand(ClimberSubsystem climberSubsystem, Joystick controller) {
     // Use addRequirements() here to declare subsystem dependencies.
+    joystick = controller;
+    m_climberSubsystem = climberSubsystem;
   }
 
   // Called when the command is initially scheduled.
@@ -18,7 +26,16 @@ public class ClimberCommand extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    if (joystick.getRawButton(climberConstants.climberButton)) {
+      m_climberSubsystem.climb();
+    }
+    // Climber will stop if the button 3 is released
+    // TODO: Add a way for the robot to automatyically know when max climber height is released
+    if (joystick.getRawButtonReleased(climberConstants.climberButton)){
+      m_climberSubsystem.stop();
+    }
+  }
 
   // Called once the command ends or is interrupted.
   @Override
