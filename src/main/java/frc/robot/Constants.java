@@ -42,6 +42,9 @@ public final class Constants {
 
   public static class climberConstants{
     // Input climber constants
+    public static int rightClimberDeviceID = 9;
+    public static int leftClimberDeviceID = 10;
+    public static int climberButton = 3;
   }
 
   public static class shooterConstants{
