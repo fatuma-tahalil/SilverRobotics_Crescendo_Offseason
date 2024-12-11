@@ -36,7 +36,7 @@ public final class Constants {
 
   public static class intakeConstants{
     public static int intakeDeviceID = 8; 
-    public static double intakeSpeed = 0.25; //WHATEVER YOU DO, DO NOT SET THIS TO 1!!!
+    public static double intakeSpeed = 0.15; //WHATEVER YOU DO, DO NOT SET THIS TO 1!!!
     public static int intakeButton = 2; // PLACEHOLDER VALUE
   }
 
