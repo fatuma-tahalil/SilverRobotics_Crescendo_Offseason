@@ -31,10 +31,9 @@ public class ShooterCommand extends Command {
     }if (joystick.getRawButton(shooterConstants.shootButton1) && joystick.getRawButtonPressed(shooterConstants.shootButton2)) {
       m_shooterSubsystem.shoot();
     }  
-    // If both buttons are released the shooter will stop
+    // If button 5 is released or both buttons are released the shooter will stop
     if (joystick.getRawButtonReleased(shooterConstants.shootButton1) || joystick.getRawButtonReleased(shooterConstants.shootButton1) && joystick.getRawButtonReleased(shooterConstants.shootButton2)) {
       m_shooterSubsystem.stop();
-      System.out.println("WORKED");
     }
   }
 
