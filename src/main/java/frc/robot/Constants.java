@@ -29,7 +29,7 @@ public final class Constants {
 
     public static int controllerPort = 1;
     public static double driveSpeed = 1.00;
-    public static int axisX = 2;
+    public static int axisX = 4;
     public static int axisY = 1;
     public static double rate_limit = 0.5;
   }
