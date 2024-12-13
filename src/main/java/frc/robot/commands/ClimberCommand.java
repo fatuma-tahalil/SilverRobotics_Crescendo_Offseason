@@ -27,11 +27,13 @@ public class ClimberCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    // Climber button climbs while button 3 is being held
     if (joystick.getRawButton(climberConstants.climberButton)) {
       m_climberSubsystem.climb();
+      System.out.println("Climbing");
     }
     // Climber will stop if the button 3 is released
-    // TODO: Add a way for the robot to automatyically know when max climber height is released
+    // TODO: Add a way for the robot to automatically know when max climber height is released
     if (joystick.getRawButtonReleased(climberConstants.climberButton)){
       m_climberSubsystem.stop();
     }
