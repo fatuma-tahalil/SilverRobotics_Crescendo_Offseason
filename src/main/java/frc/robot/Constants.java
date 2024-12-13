@@ -15,29 +15,29 @@ package frc.robot;
  */
 public final class Constants {
   public static class OperatorConstants {
-    public static int controllerPort = 0;  
+    public final static int controllerPort = 0;  
   }
   
   public static class autoConstants{
     // Input auto constants
   }
   public static class driverConstants{
-    public static int rightUpDeviceID = 1; 
-    public static int leftUpDeviceID = 3;
-    public static int rightDownDeviceID = 2; 
-    public static int leftDownDeviceID = 4;
+    public final static int rightUpDeviceID = 1; 
+    public final static int leftUpDeviceID = 3;
+    public final static int rightDownDeviceID = 2; 
+    public final static int leftDownDeviceID = 4;
 
-    public static int controllerPort = 1;
-    public static double driveSpeed = 1.00;
-    public static int axisX = 4;
-    public static int axisY = 1;
-    public static double rate_limit = 0.5;
+    public final static int controllerPort = 1;
+    public final static double driveSpeed = 1.00;
+    public final static int axisX = 4;
+    public final static int axisY = 1;
+    public final static double rate_limit = 0.5;
   }
 
   public static class intakeConstants{
-    public static int intakeDeviceID = 8; 
-    public static double intakeSpeed = 0.15; //WHATEVER YOU DO, DO NOT SET THIS TO 1!!!
-    public static int intakeButton = 2; 
+    public final static int intakeDeviceID = 8; 
+    public final static double intakeSpeed = 0.15; //WHATEVER YOU DO, DO NOT SET THIS TO 1!!!
+    public final static int intakeButton = 2; 
   }
 
   public static class climberConstants{
@@ -45,13 +45,13 @@ public final class Constants {
   }
 
   public static class shooterConstants{
-    public static int shooterPort = 0;
-    public static int shooterUpDeviceID = 5; 
-    public static int shooterDownDeviceID = 6;
-    public static double waitTime = 1;
-    public static int shootButton1 = 5;
-    public static int shootButton2 = 6;
+    public final static int shooterPort = 0;
+    public final static int shooterUpDeviceID = 5; 
+    public final static int shooterDownDeviceID = 6;
+    public final static double waitTime = 1;
+    public final static int shootButton1 = 5;
+    public final static int shootButton2 = 6;
 
-    public static double shooterSpeed = 1.00;
+    public final static double shooterSpeed = 1.00;
   }
 }
