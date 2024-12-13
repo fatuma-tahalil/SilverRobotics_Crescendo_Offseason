@@ -25,14 +25,14 @@ public class ShooterCommand extends Command {
   @Override
   public void execute() {
     // If the 5th button is pressed the shooter will prepare by speeding up the top motor
-    if (joystick.getRawButton(ShooterConstants.shootButton1)) {
+    if (joystick.getRawButton(ShooterConstants.SHOOT_BUTTON1)) {
       m_shooterSubsystem.waitSeconds();
     // If the 5th button is being pressed and the 6th button is clicked then the shooter will shoot
-    }if (joystick.getRawButton(ShooterConstants.shootButton1) && joystick.getRawButtonPressed(ShooterConstants.shootButton2)) {
+    }if (joystick.getRawButton(ShooterConstants.SHOOT_BUTTON1) && joystick.getRawButtonPressed(ShooterConstants.SHOOT_BUTTON2)) {
       m_shooterSubsystem.shoot();
     }  
     // If both buttons are released the shooter will stop
-    if (joystick.getRawButtonReleased(ShooterConstants.shootButton1) || joystick.getRawButtonReleased(ShooterConstants.shootButton1) && joystick.getRawButtonReleased(ShooterConstants.shootButton2)) {
+    if (joystick.getRawButtonReleased(ShooterConstants.SHOOT_BUTTON1) || joystick.getRawButtonReleased(ShooterConstants.SHOOT_BUTTON1) && joystick.getRawButtonReleased(ShooterConstants.SHOOT_BUTTON2)) {
       m_shooterSubsystem.stop();
     }
     

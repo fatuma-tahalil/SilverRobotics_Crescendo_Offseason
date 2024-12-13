@@ -30,8 +30,8 @@ public class DriveCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double moveSpeed = joystick.getRawAxis(DriverConstants.axisX);
-    double rotateSpeed = joystick.getRawAxis(DriverConstants.axisY);
+    double moveSpeed = joystick.getRawAxis(DriverConstants.AXIS_X);
+    double rotateSpeed = joystick.getRawAxis(DriverConstants.AXIS_Y);
 
     m_drivetrainSubsystem.drive(moveSpeed, rotateSpeed);
   }

@@ -10,12 +10,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.ShooterConstants;
 
 public class ShooterSubsystem extends SubsystemBase {
-  private final CANSparkMax shooterUpMotor;
-  private final CANSparkMax shooterDownMotor;
+  private final CANSparkMax shooterUpMotor, shooterDownMotor;
 
   public ShooterSubsystem() {
-    shooterUpMotor = new CANSparkMax(ShooterConstants.shooterUpDeviceID, MotorType.kBrushed);
-    shooterDownMotor = new CANSparkMax(ShooterConstants.shooterDownDeviceID, MotorType.kBrushed);
+    shooterUpMotor = new CANSparkMax(ShooterConstants.SHOOTER_TOP_DEVICE_ID, MotorType.kBrushed);
+    shooterDownMotor = new CANSparkMax(ShooterConstants.SHOOTER_BOTTOM_DEVICE_ID, MotorType.kBrushed);
 
 
     shooterUpMotor.restoreFactoryDefaults();
@@ -29,11 +28,11 @@ public class ShooterSubsystem extends SubsystemBase {
   }
   // Hold button to run top motor
   public void waitSeconds(){
-    shooterUpMotor.set(-ShooterConstants.shooterSpeed);
+    shooterUpMotor.set(-ShooterConstants.SHOOTER_SPEED);
   }
   // Release button to run bottom motor and send note
   public void shoot(){
-    shooterDownMotor.set(-ShooterConstants.shooterSpeed);
+    shooterDownMotor.set(-ShooterConstants.SHOOTER_SPEED);
   }
 
   public void stop() {

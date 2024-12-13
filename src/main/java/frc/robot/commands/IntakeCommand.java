@@ -17,11 +17,11 @@ public class IntakeCommand extends Command {
     @Override
     public void execute() { 
     //If the button specified in the constants is pressed, begin the intake motor.  
-        if (joystick.getRawButtonPressed(IntakeConstants.intakeButton)) {
+        if (joystick.getRawButtonPressed(IntakeConstants.INTAKE_BUTTON)) {
             m_IntakeSubsystem.intake();  
         }  
         // Add an else to stop
-        if (joystick.getRawButtonReleased(IntakeConstants.intakeButton)) {
+        if (joystick.getRawButtonReleased(IntakeConstants.INTAKE_BUTTON)) {
             m_IntakeSubsystem.stop();
         }
 

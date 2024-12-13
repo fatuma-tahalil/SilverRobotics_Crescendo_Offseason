@@ -29,13 +29,13 @@ public class ClimberCommand extends Command {
   @Override
   public void execute() {
     // Climber button climbs while button 3 is being held
-    if (joystick.getRawButton(ClimberConstants.climberButton)) {
+    if (joystick.getRawButton(ClimberConstants.CLIMBER_BUTTON)) {
       m_climberSubsystem.climb();
-      System.out.println("Climbing");
+      System.out.println("Climbing"); // Test to see if climbing is working
     }
     // Climber will stop if the button 3 is released
     // TODO: Add a way for the robot to automatically know when max climber height is released
-    if (joystick.getRawButtonReleased(ClimberConstants.climberButton)){
+    if (joystick.getRawButtonReleased(ClimberConstants.CLIMBER_BUTTON)){
       m_climberSubsystem.stop();
     }
   }

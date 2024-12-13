@@ -12,27 +12,28 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.DriverConstants;
 
 public class DrivetrainSubsystem extends SubsystemBase{
+  /** Creates a new DrivetrainSubsystem. */
 
-
-  private final CANSparkMax rightUpMotor, rightDownMotor, leftUpMotor, leftDownMotor;
+  private final CANSparkMax rightFrontMotor, rightBackMotor, leftFrontMotor, leftBackMotor;
 
   private DifferentialDrive differentialDrive = null; 
 
   public DrivetrainSubsystem() {
-    rightUpMotor = new CANSparkMax(DriverConstants.rightUpDeviceID, MotorType.kBrushed);
-    rightDownMotor = new CANSparkMax(DriverConstants.rightDownDeviceID, MotorType.kBrushed);
-    leftUpMotor = new CANSparkMax(DriverConstants.leftUpDeviceID, MotorType.kBrushed);
-    leftDownMotor = new CANSparkMax(DriverConstants.leftDownDeviceID, MotorType.kBrushed);
+    rightFrontMotor = new CANSparkMax(DriverConstants.RIGHT_FRONT_DEVICE_ID, MotorType.kBrushed);
+    rightBackMotor = new CANSparkMax(DriverConstants.RIGHT_BACK_DEVICE_ID, MotorType.kBrushed);
+    leftFrontMotor = new CANSparkMax(DriverConstants.LEFT_FRONT_DEVICE_ID, MotorType.kBrushed);
+    leftBackMotor = new CANSparkMax(DriverConstants.LEFT_BACK_DEVICE_ID, MotorType.kBrushed);
 
-    rightDownMotor.follow(rightUpMotor);
-    leftDownMotor.follow(leftUpMotor);
+    rightBackMotor.follow(rightFrontMotor);
+    leftBackMotor.follow(leftFrontMotor);
     
-    differentialDrive = new DifferentialDrive(leftUpMotor, rightUpMotor);
+    differentialDrive = new DifferentialDrive(leftFrontMotor, rightFrontMotor);
 
-    rightUpMotor.restoreFactoryDefaults();
-    leftUpMotor.restoreFactoryDefaults();
-    rightDownMotor.restoreFactoryDefaults();
-    leftDownMotor.restoreFactoryDefaults();
+    // TODO: Test if restoreFactoryDefaults is necessary
+    rightFrontMotor.restoreFactoryDefaults();
+    leftFrontMotor.restoreFactoryDefaults();
+    rightBackMotor.restoreFactoryDefaults();
+    leftBackMotor.restoreFactoryDefaults();
   }
 
   public void drive(double moveSpeed, double rotateSpeed) {

@@ -25,7 +25,7 @@ import frc.robot.subsystems.ShooterSubsystem;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  public static final DrivetrainSubsystem m_drivetrain = new DrivetrainSubsystem();
+  public static final DrivetrainSubsystem drivetrain = new DrivetrainSubsystem();
   private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
   private final IntakeSubsystem m_IntakeSubsystem = new IntakeSubsystem();
   private final ClimberSubsystem m_ClimberSubsystem = new ClimberSubsystem();
@@ -38,7 +38,7 @@ public class RobotContainer {
     configureButtonBindings();
 
     // Set default commands on subsystems
-   m_drivetrain.setDefaultCommand(new DriveCommand(m_drivetrain, driverController));
+   drivetrain.setDefaultCommand(new DriveCommand(drivetrain, driverController));
    m_ShooterSubsystem.setDefaultCommand(new ShooterCommand(m_ShooterSubsystem, driverController));
    m_IntakeSubsystem.setDefaultCommand(new IntakeCommand(m_IntakeSubsystem, driverController));
    m_ClimberSubsystem.setDefaultCommand(new ClimberCommand(m_ClimberSubsystem, driverController));
