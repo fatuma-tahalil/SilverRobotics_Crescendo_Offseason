@@ -7,15 +7,15 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 import com.revrobotics.CANSparkMax;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants.shooterConstants;
+import frc.robot.Constants.ShooterConstants;
 
 public class ShooterSubsystem extends SubsystemBase {
   private final CANSparkMax shooterUpMotor;
   private final CANSparkMax shooterDownMotor;
 
   public ShooterSubsystem() {
-    shooterUpMotor = new CANSparkMax(shooterConstants.shooterUpDeviceID, MotorType.kBrushed);
-    shooterDownMotor = new CANSparkMax(shooterConstants.shooterDownDeviceID, MotorType.kBrushed);
+    shooterUpMotor = new CANSparkMax(ShooterConstants.shooterUpDeviceID, MotorType.kBrushed);
+    shooterDownMotor = new CANSparkMax(ShooterConstants.shooterDownDeviceID, MotorType.kBrushed);
 
 
     shooterUpMotor.restoreFactoryDefaults();
@@ -29,11 +29,11 @@ public class ShooterSubsystem extends SubsystemBase {
   }
   // Hold button to run top motor
   public void waitSeconds(){
-    shooterUpMotor.set(-shooterConstants.shooterSpeed);
+    shooterUpMotor.set(-ShooterConstants.shooterSpeed);
   }
   // Release button to run bottom motor and send note
   public void shoot(){
-    shooterDownMotor.set(-shooterConstants.shooterSpeed);
+    shooterDownMotor.set(-ShooterConstants.shooterSpeed);
   }
 
   public void stop() {

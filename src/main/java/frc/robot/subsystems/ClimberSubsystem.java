@@ -10,7 +10,7 @@ import com.revrobotics.CANSparkMax;
 import edu.wpi.first.wpilibj.motorcontrol.VictorSP;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants.climberConstants;
+import frc.robot.Constants.ClimberConstants;
 
 public class ClimberSubsystem extends SubsystemBase {
   /** Creates a new ClimberSubsystem. */
@@ -19,15 +19,15 @@ public class ClimberSubsystem extends SubsystemBase {
   private final CANSparkMax rightClimber;
 
   public ClimberSubsystem() {
-    leftClimber = new VictorSP(climberConstants.leftClimberDeviceID);
-    rightClimber = new CANSparkMax(climberConstants.rightClimberDeviceID,  MotorType.kBrushed);
+    leftClimber = new VictorSP(ClimberConstants.leftClimberDeviceID);
+    rightClimber = new CANSparkMax(ClimberConstants.rightClimberDeviceID,  MotorType.kBrushed);
 
     rightClimber.restoreFactoryDefaults();
   }
 
   public void climb() {
-    rightClimber.set(climberConstants.climberSpeed);
-    leftClimber.set(climberConstants.climberSpeed);
+    rightClimber.set(ClimberConstants.climberSpeed);
+    leftClimber.set(ClimberConstants.climberSpeed);
   }
   @Override
   public void periodic() {

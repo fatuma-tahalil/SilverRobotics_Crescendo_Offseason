@@ -6,8 +6,9 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.Constants;
 import frc.robot.subsystems.ClimberSubsystem;
-import frc.robot.Constants.climberConstants;
+import frc.robot.Constants.ClimberConstants;
 
 public class ClimberCommand extends Command {
 
@@ -28,13 +29,13 @@ public class ClimberCommand extends Command {
   @Override
   public void execute() {
     // Climber button climbs while button 3 is being held
-    if (joystick.getRawButton(climberConstants.climberButton)) {
+    if (joystick.getRawButton(ClimberConstants.climberButton)) {
       m_climberSubsystem.climb();
       System.out.println("Climbing");
     }
     // Climber will stop if the button 3 is released
     // TODO: Add a way for the robot to automatically know when max climber height is released
-    if (joystick.getRawButtonReleased(climberConstants.climberButton)){
+    if (joystick.getRawButtonReleased(ClimberConstants.climberButton)){
       m_climberSubsystem.stop();
     }
   }

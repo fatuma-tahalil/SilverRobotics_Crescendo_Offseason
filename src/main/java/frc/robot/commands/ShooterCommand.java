@@ -6,7 +6,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Constants.shooterConstants;
+import frc.robot.Constants.ShooterConstants;
 import frc.robot.subsystems.ShooterSubsystem;
 
 public class ShooterCommand extends Command {
@@ -25,14 +25,14 @@ public class ShooterCommand extends Command {
   @Override
   public void execute() {
     // If the 5th button is pressed the shooter will prepare by speeding up the top motor
-    if (joystick.getRawButton(shooterConstants.shootButton1)) {
+    if (joystick.getRawButton(ShooterConstants.shootButton1)) {
       m_shooterSubsystem.waitSeconds();
     // If the 5th button is being pressed and the 6th button is clicked then the shooter will shoot
-    }if (joystick.getRawButton(shooterConstants.shootButton1) && joystick.getRawButtonPressed(shooterConstants.shootButton2)) {
+    }if (joystick.getRawButton(ShooterConstants.shootButton1) && joystick.getRawButtonPressed(ShooterConstants.shootButton2)) {
       m_shooterSubsystem.shoot();
     }  
     // If both buttons are released the shooter will stop
-    if (joystick.getRawButtonReleased(shooterConstants.shootButton1) || joystick.getRawButtonReleased(shooterConstants.shootButton1) && joystick.getRawButtonReleased(shooterConstants.shootButton2)) {
+    if (joystick.getRawButtonReleased(ShooterConstants.shootButton1) || joystick.getRawButtonReleased(ShooterConstants.shootButton1) && joystick.getRawButtonReleased(ShooterConstants.shootButton2)) {
       m_shooterSubsystem.stop();
     }
     

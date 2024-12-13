@@ -6,7 +6,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Constants.driverConstants;
+import frc.robot.Constants.DriverConstants;
 import frc.robot.subsystems.DrivetrainSubsystem;
 
 public class DriveCommand extends Command {
@@ -30,10 +30,10 @@ public class DriveCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    double moveSpeed = joystick.getRawAxis(driverConstants.axisX);
-    double rotateSpeed = joystick.getRawAxis(driverConstants.axisY);
+    double moveSpeed = joystick.getRawAxis(DriverConstants.axisX);
+    double rotateSpeed = joystick.getRawAxis(DriverConstants.axisY);
 
-    m_drivetrainSubsystem.DriveCommand(moveSpeed, rotateSpeed);
+    m_drivetrainSubsystem.drive(moveSpeed, rotateSpeed);
   }
 
   // Called once the command ends or is interrupted.

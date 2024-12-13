@@ -4,14 +4,13 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants.intakeConstants;
+import frc.robot.Constants.IntakeConstants;
 
 public class IntakeSubsystem extends SubsystemBase{
     private final CANSparkMax intakeMotor; 
 
     public IntakeSubsystem() {
-        intakeMotor = new CANSparkMax(intakeConstants.intakeDeviceID, MotorType.kBrushless); 
-
+        intakeMotor = new CANSparkMax(IntakeConstants.intakeDeviceID, MotorType.kBrushless); 
         intakeMotor.restoreFactoryDefaults();
     } 
 
@@ -21,7 +20,7 @@ public class IntakeSubsystem extends SubsystemBase{
       // TODO: Add safety code to stop motor from being 100% power
     }
     public void intake(){ 
-      intakeMotor.set(intakeConstants.intakeSpeed);
+      intakeMotor.set(IntakeConstants.intakeSpeed);
     }
     public void stop() {
       intakeMotor.set(0);

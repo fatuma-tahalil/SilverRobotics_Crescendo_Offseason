@@ -22,10 +22,10 @@ public final class Constants {
     public static int controllerPort = 0;  
   }
   
-  public static class autoConstants{
+  public static class AutoConstants{
     // Input auto constants
   }
-  public static class driverConstants{
+  public static class DriverConstants{
     public static int rightUpDeviceID = 1; 
     public static int leftUpDeviceID = 3;
     public static int rightDownDeviceID = 2; 
@@ -38,13 +38,13 @@ public final class Constants {
     public static double rate_limit = 0.5;
   }
 
-  public static class intakeConstants{
+  public static class IntakeConstants{
     public static int intakeDeviceID = 8; 
     public static double intakeSpeed = 0.15; //WHATEVER YOU DO, DO NOT SET THIS TO 1!!!
     public static int intakeButton = 2; // PLACEHOLDER VALUE
   }
 
-  public static class climberConstants{
+  public static class ClimberConstants{
     // Input climber constants
     public static int rightClimberDeviceID = 9;
     public static int leftClimberDeviceID = 10;
@@ -52,7 +52,7 @@ public final class Constants {
     public static double climberSpeed = 0.6; // To be determined
   }
 
-  public static class shooterConstants{
+  public static class ShooterConstants{
     public static int shooterPort = 0;
     public static int shooterUpDeviceID = 5; 
     public static int shooterDownDeviceID = 6;
