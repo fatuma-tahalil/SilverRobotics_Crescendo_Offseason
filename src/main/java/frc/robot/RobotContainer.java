@@ -26,9 +26,9 @@ import frc.robot.subsystems.ShooterSubsystem;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   public static final DrivetrainSubsystem drivetrain = new DrivetrainSubsystem();
-  private final ShooterSubsystem m_ShooterSubsystem = new ShooterSubsystem();
-  private final IntakeSubsystem m_IntakeSubsystem = new IntakeSubsystem();
-  private final ClimberSubsystem m_ClimberSubsystem = new ClimberSubsystem();
+  private final ShooterSubsystem shooterSubsystem = new ShooterSubsystem();
+  private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
+  private final ClimberSubsystem climberSubsystem = new ClimberSubsystem();
   public Joystick driverController = new Joystick(Constants.OperatorConstants.controllerPort);
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -39,9 +39,9 @@ public class RobotContainer {
 
     // Set default commands on subsystems
    drivetrain.setDefaultCommand(new DriveCommand(drivetrain, driverController));
-   m_ShooterSubsystem.setDefaultCommand(new ShooterCommand(m_ShooterSubsystem, driverController));
-   m_IntakeSubsystem.setDefaultCommand(new IntakeCommand(m_IntakeSubsystem, driverController));
-   m_ClimberSubsystem.setDefaultCommand(new ClimberCommand(m_ClimberSubsystem, driverController));
+   shooterSubsystem.setDefaultCommand(new ShooterCommand(shooterSubsystem, driverController));
+   intakeSubsystem.setDefaultCommand(new IntakeCommand(intakeSubsystem, driverController));
+   climberSubsystem.setDefaultCommand(new ClimberCommand(climberSubsystem, driverController));
   }
 
 
