@@ -18,7 +18,7 @@ public class IntakeSubsystem extends SubsystemBase{
     @Override 
     public void periodic() {
       // This method will be called once per scheduler run. Keeping this here in case anybody wants to use it later on.
-  
+      // TODO: Add safety code to stop motor from being 100% power
     }
     public void intake(){ 
       intakeMotor.set(intakeConstants.intakeSpeed);

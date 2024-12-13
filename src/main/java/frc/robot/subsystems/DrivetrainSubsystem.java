@@ -35,6 +35,8 @@ public class DrivetrainSubsystem extends SubsystemBase{
     leftDownMotor.restoreFactoryDefaults();
   }
 
+  // TODO: Make lowercase first level methods 
+  // TODO: Call it drive
   public void DriveCommand(double moveSpeed, double rotateSpeed) {
     differentialDrive.arcadeDrive(moveSpeed, rotateSpeed);
   }
@@ -42,6 +44,7 @@ public class DrivetrainSubsystem extends SubsystemBase{
   public void periodic() {
     // This method will be called once per scheduler run
 
+    // Safety code and dashboard updates go here
     }
 
   public void stop() {

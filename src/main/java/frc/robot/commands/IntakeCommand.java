@@ -20,6 +20,7 @@ public class IntakeCommand extends Command {
         if (joystick.getRawButtonPressed(intakeConstants.intakeButton)) {
             m_IntakeSubsystem.intake();  
         }  
+        // Add an else to stop
         if (joystick.getRawButtonReleased(intakeConstants.intakeButton)) {
             m_IntakeSubsystem.stop();
         }

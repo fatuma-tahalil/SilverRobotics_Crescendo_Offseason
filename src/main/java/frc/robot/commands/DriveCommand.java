@@ -23,7 +23,9 @@ public class DriveCommand extends Command {
 
 // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    // The default command has started
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
