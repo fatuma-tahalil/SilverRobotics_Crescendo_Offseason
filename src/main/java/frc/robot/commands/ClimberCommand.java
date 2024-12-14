@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.ClimberSubsystem;
 import frc.robot.Constants.ClimberConstants;
-import frc.robot.subsystems.ClimberSubsystem;
 
 public class ClimberCommand extends Command {
 
@@ -19,7 +18,7 @@ public class ClimberCommand extends Command {
     // Use addRequirements() here to declare subsystem dependencies.
     joystick = controller;
     m_climberSubsystem = climberSubsystem;
-    addRequirments(climberSubsystem);
+    addRequirements(climberSubsystem);
   }
 
   // Called when the command is initially scheduled.
