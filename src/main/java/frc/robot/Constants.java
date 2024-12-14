@@ -19,7 +19,7 @@ package frc.robot;
    */
 public final class Constants {
   public static final class OperatorConstants {
-    public static final int controllerPort = 0;  
+    public static final int CONTROLLER_PORT = 0;  
   }
   
   public static final class AutoConstants{

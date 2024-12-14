@@ -29,7 +29,7 @@ public class RobotContainer {
   private final ShooterSubsystem shooterSubsystem = new ShooterSubsystem();
   private final IntakeSubsystem intakeSubsystem = new IntakeSubsystem();
   private final ClimberSubsystem climberSubsystem = new ClimberSubsystem();
-  public Joystick driverController = new Joystick(Constants.OperatorConstants.controllerPort);
+  public Joystick driverController = new Joystick(Constants.OperatorConstants.CONTROLLER_PORT);
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
