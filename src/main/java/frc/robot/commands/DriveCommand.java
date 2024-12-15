@@ -12,13 +12,13 @@ import frc.robot.subsystems.DrivetrainSubsystem;
 public class DriveCommand extends Command {
   /** Creates a new DriveCommand. */
   private final Joystick joystick;
-  private final DrivetrainSubsystem m_drivetrainSubsystem;
+  private final DrivetrainSubsystem drivetrain;
   
   // The commands constructor
-  public DriveCommand(DrivetrainSubsystem drivetrainSubsystem, Joystick controller) {
+  public DriveCommand(DrivetrainSubsystem drivetrain, Joystick controller) {
     joystick = controller;
-    m_drivetrainSubsystem = drivetrainSubsystem;
-    addRequirements(drivetrainSubsystem);
+    this.drivetrain = drivetrain;
+    addRequirements(drivetrain);
   }
 
 // Called when the command is initially scheduled.
@@ -33,13 +33,13 @@ public class DriveCommand extends Command {
     double moveSpeed = joystick.getRawAxis(DriverConstants.AXIS_X);
     double rotateSpeed = joystick.getRawAxis(DriverConstants.AXIS_Y);
 
-    m_drivetrainSubsystem.drive(moveSpeed, rotateSpeed);
+    drivetrain.drive(moveSpeed, rotateSpeed);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-   m_drivetrainSubsystem.stop();
+   drivetrain.stop();
   }
   // Returns true when the command should end.
   @Override
