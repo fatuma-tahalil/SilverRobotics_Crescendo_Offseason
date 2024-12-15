@@ -9,7 +9,7 @@ import com.revrobotics.CANSparkMax;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants.DriverConstants;
+import static frc.robot.Constants.DriverConstants;
 
 public class DrivetrainSubsystem extends SubsystemBase{
   /** Creates a new DrivetrainSubsystem. */

@@ -10,7 +10,7 @@ import com.revrobotics.CANSparkMax;
 import edu.wpi.first.wpilibj.motorcontrol.VictorSP;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants.ClimberConstants;
+import static frc.robot.Constants.ClimberConstants;
 
 
 public class ClimberSubsystem extends SubsystemBase {
