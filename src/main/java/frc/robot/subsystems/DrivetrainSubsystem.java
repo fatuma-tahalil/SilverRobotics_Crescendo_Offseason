@@ -19,10 +19,10 @@ public class DrivetrainSubsystem extends SubsystemBase{
   private DifferentialDrive differentialDrive = null; 
 
   public DrivetrainSubsystem() {
-    rightFrontMotor = new CANSparkMax(DriverConstants.RIGHT_FRONT_DEVICE_ID, MotorType.kBrushed);
-    rightBackMotor = new CANSparkMax(DriverConstants.RIGHT_BACK_DEVICE_ID, MotorType.kBrushed);
-    leftFrontMotor = new CANSparkMax(DriverConstants.LEFT_FRONT_DEVICE_ID, MotorType.kBrushed);
-    leftBackMotor = new CANSparkMax(DriverConstants.LEFT_BACK_DEVICE_ID, MotorType.kBrushed);
+    rightFrontMotor = new CANSparkMax(DriverConstants.RIGHT_FRONT_MOTOR_CAN_ID, MotorType.kBrushed);
+    rightBackMotor = new CANSparkMax(DriverConstants.RIGHT_BACK_MOTOR_CAN_ID, MotorType.kBrushed);
+    leftFrontMotor = new CANSparkMax(DriverConstants.LEFT_FRONT_MOTOR_CAN_ID, MotorType.kBrushed);
+    leftBackMotor = new CANSparkMax(DriverConstants.LEFT_BACK_MOTOR_CAN_ID, MotorType.kBrushed);
 
     rightBackMotor.follow(rightFrontMotor);
     leftBackMotor.follow(leftFrontMotor);

@@ -13,8 +13,8 @@ public class ShooterSubsystem extends SubsystemBase {
   private final CANSparkMax shooterUpMotor, shooterDownMotor;
 
   public ShooterSubsystem() {
-    shooterUpMotor = new CANSparkMax(ShooterConstants.SHOOTER_TOP_DEVICE_ID, MotorType.kBrushed);
-    shooterDownMotor = new CANSparkMax(ShooterConstants.SHOOTER_BOTTOM_DEVICE_ID, MotorType.kBrushed);
+    shooterUpMotor = new CANSparkMax(ShooterConstants.SHOOTER_TOP_MOTOR_CAN_ID, MotorType.kBrushed);
+    shooterDownMotor = new CANSparkMax(ShooterConstants.SHOOTER_BOTTOM_MOTOR_CAN_ID, MotorType.kBrushed);
 
 
     shooterUpMotor.restoreFactoryDefaults();

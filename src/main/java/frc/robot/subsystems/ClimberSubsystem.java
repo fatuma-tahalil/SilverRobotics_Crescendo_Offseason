@@ -20,8 +20,8 @@ public class ClimberSubsystem extends SubsystemBase {
   private final CANSparkMax rightClimber;
 
   public ClimberSubsystem() {
-    leftClimber = new VictorSP(ClimberConstants.LEFT_CLIMBER_DEVICE_ID);
-    rightClimber = new CANSparkMax(ClimberConstants.RIGHT_CLIMBER_DEVICE_ID,  MotorType.kBrushed);
+    leftClimber = new VictorSP(ClimberConstants.LEFT_CLIMBER_MOTOR_ID);
+    rightClimber = new CANSparkMax(ClimberConstants.RIGHT_CLIMBER_MOTOR_CAN_ID,  MotorType.kBrushed);
 
     rightClimber.restoreFactoryDefaults();
   }

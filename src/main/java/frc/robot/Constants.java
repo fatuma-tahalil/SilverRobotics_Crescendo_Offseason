@@ -26,10 +26,10 @@ public final class Constants {
     // Input auto constants
   }
   public static final class DriverConstants{
-    public static final int RIGHT_FRONT_DEVICE_ID = 1; 
-    public static final int LEFT_FRONT_DEVICE_ID = 3;
-    public static final int RIGHT_BACK_DEVICE_ID = 2; 
-    public static final int LEFT_BACK_DEVICE_ID = 4;
+    public static final int RIGHT_FRONT_MOTOR_CAN_ID = 1; 
+    public static final int LEFT_FRONT_MOTOR_CAN_ID = 3;
+    public static final int RIGHT_BACK_MOTOR_CAN_ID = 2; 
+    public static final int LEFT_BACK_MOTOR_CAN_ID = 4;
 
     public static final int CONTROLLER_PORT = 1;
     public static final double DRIVE_SPEED = 1.00;
@@ -39,22 +39,22 @@ public final class Constants {
   }
 
   public static final class IntakeConstants{
-    public static final int INTAKE_DEVICE_ID = 8; 
+    public static final int INTAKE_MOTOR_CAN_ID = 8; 
     public static final double INTAKE_SPEED = 0.15; //WHATEVER YOU DO, DO NOT SET THIS TO 1!!!
     public static final int INTAKE_BUTTON = 2; // PLACEHOLDER VALUE
   }
 
   public static final class ClimberConstants{
     // Input climber constants
-    public static final int RIGHT_CLIMBER_DEVICE_ID = 9;
-    public static final int LEFT_CLIMBER_DEVICE_ID = 10;
+    public static final int RIGHT_CLIMBER_MOTOR_CAN_ID = 9;
+    public static final int LEFT_CLIMBER_MOTOR_ID = 10; // TODO: Specify motor controller type
     public static final int CLIMBER_BUTTON = 3;
     public static final double CLIMBER_SPEED = 0.6; // To be determined
   }
 
   public static final class ShooterConstants{;
-    public static final int SHOOTER_TOP_DEVICE_ID = 5; 
-    public static final int SHOOTER_BOTTOM_DEVICE_ID = 6;
+    public static final int SHOOTER_TOP_MOTOR_CAN_ID = 5; 
+    public static final int SHOOTER_BOTTOM_MOTOR_CAN_ID = 6;
     public static final double WAIT_TIME = 1;
     public static final int SHOOT_BUTTON1 = 5;
     public static final int SHOOT_BUTTON2 = 6;
