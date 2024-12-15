@@ -52,7 +52,7 @@ public final class Constants {
     public static final double CLIMBER_SPEED = 0.6; // To be determined
   }
 
-  public static final class ShooterConstants{;
+  public static final class ShooterConstants{
     public static final int SHOOTER_TOP_MOTOR_CAN_ID = 5; 
     public static final int SHOOTER_BOTTOM_MOTOR_CAN_ID = 6;
     public static final double WAIT_TIME = 1;
